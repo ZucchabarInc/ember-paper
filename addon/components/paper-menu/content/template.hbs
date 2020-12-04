@@ -1,6 +1,8 @@
 {{!-- send the backdrop to the same place as the content --}}
 {{#if @dropdown.isOpen}}
+  {{#maybe-in-element this.destinationElement @renderInPlace}}
     <PaperBackdrop class="md-menu-backdrop md-click-catcher" @onClick={{action @dropdown.actions.close}}/>
+  {{/maybe-in-element}}
 {{/if}}
 
 <BasicDropdownContent
